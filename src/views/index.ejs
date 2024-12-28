@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+<div class="container">
+  <h1>CSRL Premier League Teams</h1>
+  <a href="/generate" class="btn btn-primary">Generate New Teams</a>
+
+  <div class="team-list">
+    <% teams.forEach(team => { %>
+      <div class="team-card">
+        <h2><%= team.name %></h2>
+        <p><strong>Captain:</strong> <%= team.captain ? team.captain.name : 'TBD' %></p>
+        <p><strong>Vice Captain:</strong> <%= team.viceCaptain ? team.viceCaptain.name : 'TBD' %></p>
+      </div>
+    <% }) %>
+  </div>
+</div>
+<%- include('partials/footer') %>

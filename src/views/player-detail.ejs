@@ -1,0 +1,37 @@
+
+  <div class="container mt-5">
+    <h2>Player Details</h2>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <th>Name</th>
+          <td><%= player.name %></td>
+        </tr>
+        <tr>
+          <th>Player Code</th>
+          <td><%= player.playerCode %></td>
+        </tr>
+        <tr>
+          <th>Role</th>
+          <td><%= player.specialization %></td>
+        </tr>
+        
+        <tr>
+          <th>Number</th>
+          <td><%= player.phone %></td>
+        </tr>
+        <!-- Add any other additional details here -->
+        <tr>
+          <th>Jersey Details</th>
+          <td>
+            <strong>Jersey Name:</strong> <%= player.jersey.name %><br>
+            <strong>Jersey Length:</strong> <%= player.jersey.length %><br>
+            <strong>T-shirt Size:</strong> <%= player.jersey.tshirtSize %><br>
+            <strong>Pant Size:</strong> <%= player.jersey.pantSize %><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="/player" class="btn btn-secondary">Back to Players List</a>
+  </div>
+

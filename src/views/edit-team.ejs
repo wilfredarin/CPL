@@ -1,0 +1,39 @@
+
+  <div class="container mt-5">
+    <h2>Edit Team</h2>
+
+    <form action="/edit-team/<%= team._id %>" method="POST">
+      <!-- Team Name -->
+      <div class="form-group">
+        <label for="name">Team Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="<%= team.name %>" required>
+      </div>
+
+      <!-- Captain -->
+      <div class="form-group">
+        <label for="captain">Captain</label>
+        <select class="form-control" id="captain" name="captain" required>
+          <option value="">Select Captain</option>
+          <% players.forEach(player => { %>
+            <option value="<%= player?._id %>" <%= player?._id.equals(team.captain?._id) ? 'selected' : '' %>><%= player?.name %> %></option>
+          <% }); %>
+        </select>
+      </div>
+
+      <!-- Vice-Captain -->
+      <div class="form-group">
+        <label for="viceCaptain">Vice-Captain</label>
+        <select class="form-control" id="viceCaptain" name="viceCaptain" required>
+          <option value="">Select Vice-Captain</option>
+          <% players.forEach(player => { %>
+            <option value="<%= player._id %>" <%= player._id.equals(team.viceCaptain?._id) ? 'selected' : '' %>><%= player.name %> - <%= player.playerCode %></option>
+          <% }); %>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+
+    <a href="/team/<%= team._id %>" class="btn btn-secondary mt-3">Back to Team</a>
+  </div>
+

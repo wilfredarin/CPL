@@ -1,0 +1,54 @@
+
+
+
+
+
+
+
+
+  <h1>Teams</h1>
+
+<!-- Team list table or any content here -->
+
+<div class="container">
+  <h1>Generated Teams</h1>
+
+  <% teams.forEach((team, index) => { %>
+    <div class="team-section">
+      <h2>Team <%= index + 1 %> - <%= team.name %></h2>
+      <p><strong>Captain:</strong> <%= team.captain ? team.captain.name : 'TBD' %></p>
+      <p><strong>Vice Captain:</strong> <%= team.viceCaptain ? team.viceCaptain.name : 'TBD' %></p>
+      
+      <h3>Batsmen</h3>
+      <ul>
+        <% team.batsmen.forEach(player => { %>
+          <li><%= player.name %> (<%= player.playerCode %>)</li>
+        <% }) %>
+      </ul>
+
+      <h3>Bowlers</h3>
+      <ul>
+        <% team.bowlers.forEach(player => { %>
+          <li><%= player.name %> (<%= player.playerCode %>)</li>
+        <% }) %>
+      </ul>
+
+      <h3>All Rounders</h3>
+      <ul>
+        <% team.allRounders.forEach(player => { %>
+          <li><%= player.name %> (<%= player.playerCode %>)</li>
+        <% }) %>
+      </ul>
+
+      <h3>Girls</h3>
+      <ul>
+        <% team.girls.forEach(player => { %>
+          <li><%= player.name %> (<%= player.playerCode %>)</li>
+        <% }) %>
+      </ul>
+    </div>
+  <% }) %>
+</div>
+
+
+<%- include('partials/footer') %>

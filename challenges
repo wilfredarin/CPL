@@ -1,0 +1,5 @@
+created folder dir first
+npm _init
+made models - of player and teams
+install dotenv and xls
+create a util uploadPlayer,js to lowad player from sheet

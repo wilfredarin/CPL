@@ -1,0 +1,72 @@
+
+  <h1>CSRL Premier Leagues Teams</h1>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Teams Overview</h1>
+    <!-- Loop through teams and display them in separate tables -->
+    <% teams.forEach((team, index) => { %>
+      <div class="mb-5 p-3 bg-light border rounded">
+        <h2><%= team.name %></h2>
+        <p><strong>Captain:</strong> <%= team.captain?.name %> | <strong>Vice Captain:</strong> <%= team.viceCaptain?.name %></p>
+        <!-- Team Players Table -->
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Player Name</th>
+              <th scope="col">Player Role</th>
+              <th scope="col">Player Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Display Batsmen -->
+            <% team.batsmen.forEach(player => { %>
+              <tr>
+                
+                <td><%= player.name %></td>
+                <td>Batsman</td>
+                <td><%= player.playerCode %></td>
+              </tr>
+            <% }); %>
+            <!-- Display Batting Allrounders -->
+            <% team.battingAllRounders.forEach(player => { %>
+              <tr>
+                <td><%= player.name %></td>
+                <td>Batting Allrounder</td>
+                
+                <td><%= player.playerCode %></td>
+              </tr>
+            <% }); %>
+
+            <!-- Display Bowling Allrounders -->
+            <% team.ballingAllRounders.forEach(player => { %>
+              <tr>
+                <td><%= player.name %></td>
+                <td>Bowling Allrounder</td>
+                
+                <td><%= player.playerCode %></td>
+              </tr>
+            <% }); %>
+
+            <!-- Display Bowlers -->
+            <% team.bowlers.forEach(player => { %>
+              <tr>
+                <td><%= player.name %></td>
+                <td>Bowler</td>
+                
+                <td><%= player.playerCode %></td>
+              </tr>
+            <% }); %>
+
+            <!-- Display Girls -->
+            <% team.girls.forEach(player => { %>
+              <tr>
+                <td><%= player.name %></td>
+                <td>Girl Player</td>
+                
+                <td><%= player.playerCode %></td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+    <% }); %>
+  </div>
