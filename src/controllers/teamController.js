@@ -67,7 +67,7 @@ exports.getTeamEdit = async function (req, res){
 
   
     // Fetch all players to display in the dropdown list for captain and vice-captain
-    const players = await Player.find();
+    const players = await Player.find({playerCode: { $exists: false }});
 
     res.render('edit-team', {
       team,
@@ -98,7 +98,7 @@ exports.getTeamEdit = async function (req, res){
     );
 
     // Redirect to the updated team page
-    res.redirect(`/team/${updatedTeam._id}`);
+    res.redirect("/");
   } catch (error) {
     console.error('Error updating team:', error);
     res.status(500).send('Error updating team');

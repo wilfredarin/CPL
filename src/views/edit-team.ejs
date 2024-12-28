@@ -26,7 +26,7 @@
         <select class="form-control" id="viceCaptain" name="viceCaptain" required>
           <option value="">Select Vice-Captain</option>
           <% players.forEach(player => { %>
-            <option value="<%= player._id %>" <%= player._id.equals(team.viceCaptain?._id) ? 'selected' : '' %>><%= player.name %> - <%= player.playerCode %></option>
+            <option value="<%= player._id %>" <%= player._id.equals(team.viceCaptain?._id) ? 'selected' : '' %>><%= player.name %></option>
           <% }); %>
         </select>
       </div>
@@ -34,6 +34,6 @@
       <button type="submit" class="btn btn-primary">Save Changes</button>
     </form>
 
-    <a href="/team/<%= team._id %>" class="btn btn-secondary mt-3">Back to Team</a>
+    <a href="/%>" class="btn btn-secondary mt-3">Back to Team</a>
   </div>
 
