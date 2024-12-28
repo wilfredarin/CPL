@@ -15,7 +15,8 @@ exports.getPlayerById = async function(req, res){
     
 exports.getPlayers = async function(req, res){
     try {
-      const players = await Player.find(); // Fetch all players from the database
+      const players = await Player.find({});
+       // Fetch all players from the database
       res.render('player', { players });
     } catch (error) {
       console.error('Error fetching players:', error);

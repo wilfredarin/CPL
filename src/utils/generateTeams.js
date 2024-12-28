@@ -54,17 +54,7 @@ async function generateRandomTeams(teamCount = 5, excludePlayers = []) {
         });
       });
 
-      await Team.updateMany(
-       {},
-        {
-          $set: {
-            batsmen: [], // Clear batsmen
-            bowlers: [], // Clear bowlers
-            ballingAllRounders: [], // Clear bowling all-rounders
-            battingAllRounders: [], // Clear batting all-rounders
-            girls: [] // Clear girls
-          }
-        });
+      await Team.deleteMany({});
       // console.log(teams)
       // Save generated teams
       const savedTeams = await Team.insertMany(

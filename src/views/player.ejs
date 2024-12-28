@@ -1,13 +1,13 @@
 
   <div class="container mt-5">
     <h2>Players List</h2>
+    <%= players%>
     <table class="table table-bordered">
       <thead class="thead-dark">
         <tr>
           <th>Name</th>
           <th>Player Code</th>
           <th>Role</th>
-          
           <th>Number</th>
         </tr>
       </thead>
@@ -17,7 +17,6 @@
             <td><a href="/player/<%= player._id %>"><%= player.name %></a></td>
             <td><%= player.playerCode %></td>
             <td><%= player.specialization %></td>
-           
             <td><%= player.phone %></td>
           </tr>
         <% }); %>
