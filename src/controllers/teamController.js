@@ -35,13 +35,13 @@ exports.showGeneratedTeams = async (req, res) => {
 exports.getTeams = async function (req, res) {
   try {
     const teams = await Team.find()
-      .populate('captain', 'name playerCode')  // Populate captain with name and playerCode
-      .populate('viceCaptain', 'name playerCode')  // Populate vice-captain with name and playerCode
-      .populate('batsmen', 'name playerCode')  // Populate batsmen with name and playerCode
-      .populate('bowlers', 'name playerCode')  // Populate bowlers with name and playerCode
-      .populate('battingAllRounders', 'name playerCode')  // Populate batting all-rounders with name and playerCode
-      .populate('ballingAllRounders', 'name playerCode')  // Populate bowling all-rounders with name and playerCode
-      .populate('girls', 'name playerCode');  // Populate girls with name and playerCode
+      .populate('captain', 'name phone')  // Populate captain with name and playerCode
+      .populate('viceCaptain', 'name phone')  // Populate vice-captain with name and playerCode
+      .populate('batsmen', 'name phone')  // Populate batsmen with name and playerCode
+      .populate('bowlers', 'name phone')  // Populate bowlers with name and playerCode
+      .populate('battingAllRounders', 'name phone')  // Populate batting all-rounders with name and playerCode
+      .populate('ballingAllRounders', 'name phone')  // Populate bowling all-rounders with name and playerCode
+      .populate('girls', 'name phone');  // Populate girls with name and playerCode
 
     // Render the landing page with teams data
     res.render('landing', { teams });

@@ -6,14 +6,14 @@
     <% teams.forEach((team, index) => { %>
       <div class="mb-5 p-3 bg-light border rounded">
         <h2><%= team.name %></h2>
-        <p><strong>Captain:</strong> <%= team.captain?.name %> | <strong>Vice Captain:</strong> <%= team.viceCaptain?.name %></p>
+        <p><strong>Captain:</strong> <%= team.captain?.name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') %> | <strong>Vice Captain:</strong> <%= team.viceCaptain?.name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') %></p>
         <!-- Team Players Table -->
         <table class="table table-bordered">
           <thead>
             <tr>
               <th scope="col">Player Name</th>
               <th scope="col">Player Role</th>
-              <th scope="col">Player Code</th>
+              <th scope="col">Player Phone</th>
             </tr>
           </thead>
           <tbody>
@@ -21,48 +21,48 @@
             <% team.batsmen.forEach(player => { %>
               <tr>
                 
-                <td><%= player.name %></td>
+                <td><%= player.name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') %></td>
                 <td>Batsman</td>
-                <td><%= player.playerCode %></td>
+                <td><%= player.phone %></td>
               </tr>
             <% }); %>
             <!-- Display Batting Allrounders -->
             <% team.battingAllRounders.forEach(player => { %>
               <tr>
-                <td><%= player.name %></td>
+                <td><%= player.name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') %></td>
                 <td>Batting Allrounder</td>
                 
-                <td><%= player.playerCode %></td>
+                <td><%= player.phone %></td>
               </tr>
             <% }); %>
 
             <!-- Display Bowling Allrounders -->
             <% team.ballingAllRounders.forEach(player => { %>
               <tr>
-                <td><%= player.name %></td>
+                <td><%= player.name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') %></td>
                 <td>Bowling Allrounder</td>
                 
-                <td><%= player.playerCode %></td>
+                <td><%= player.phone %></td>
               </tr>
             <% }); %>
 
             <!-- Display Bowlers -->
             <% team.bowlers.forEach(player => { %>
               <tr>
-                <td><%= player.name %></td>
+                <td><%= player.name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') %></td>
                 <td>Bowler</td>
                 
-                <td><%= player.playerCode %></td>
+                <td><%= player.phone %></td>
               </tr>
             <% }); %>
 
             <!-- Display Girls -->
             <% team.girls.forEach(player => { %>
               <tr>
-                <td><%= player.name %></td>
+                <td><%= player.name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') %></td>
                 <td>Girl Player</td>
                 
-                <td><%= player.playerCode %></td>
+                <td><%= player.phone %></td>
               </tr>
             <% }); %>
           </tbody>

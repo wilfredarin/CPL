@@ -45,4 +45,5 @@ const playerSchema = new mongoose.Schema({
 
 const PlayerModel = mongoose.model("Player",playerSchema);
 
+
 module.exports = PlayerModel;
